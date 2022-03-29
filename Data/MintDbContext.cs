@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mint.Models;
 
 namespace Mint.Data
 {
@@ -8,5 +9,7 @@ namespace Mint.Data
         {
 
         }
+
+        public DbSet<Item> Items { get; set; }
     }
 }
