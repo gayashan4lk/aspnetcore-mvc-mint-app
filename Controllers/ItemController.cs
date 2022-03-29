@@ -20,9 +20,20 @@ namespace Mint.Controllers
             return View(ObjList);
         }
 
+        // GET - Create()
         public IActionResult Create()
         {
             return View();
+        }
+
+        // POST - Create()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Item item)
+        {
+            _db.Items.Add(item);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
