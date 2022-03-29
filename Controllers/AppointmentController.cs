@@ -11,5 +11,10 @@ namespace Mint.Controllers
             /*string todaysDate = DateTime.Now.ToShortDateString();
             return Ok(todaysDate);*/
         }
+
+        public IActionResult Details(int id)
+        {
+            return Ok("You have entered id = " + id);
+        }
     }
 }
