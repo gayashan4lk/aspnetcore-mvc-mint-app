@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Mint.Data;
 
 namespace Mint.Migrations
 {
     [DbContext(typeof(MintDbContext))]
-    partial class MintDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220329152233_addLenderItemNameCols")]
+    partial class addLenderItemNameCols
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
