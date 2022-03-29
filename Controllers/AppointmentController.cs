@@ -7,9 +7,9 @@ namespace Mint.Controllers
     {
         public IActionResult Index()
         {
-            //return View();
-            string todaysDate = DateTime.Now.ToShortDateString();
-            return Ok(todaysDate);
+            return View();
+            /*string todaysDate = DateTime.Now.ToShortDateString();
+            return Ok(todaysDate);*/
         }
     }
 }
