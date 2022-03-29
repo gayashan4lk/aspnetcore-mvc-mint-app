@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<Mint.Models.Item>
 
-<h1>Index - Items</h1>
-
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
@@ -15,19 +13,19 @@
 
     @if(Model.Count() > 0)
     {
-        <table class="d-lg-table d-lg-table table-striped" style="width:100%">
+        <table class="table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>Item Name</th>
-                    <th>Borrower</th>
-                    <th>Lender</th>
+                    <th scope="col">Item name</th>
+                    <th scope="col">Borrower</th>
+                    <th scope="col">Lender</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td width="30%">@item.ItemName</td>
+                        <td width="30%" scope="row">@item.ItemName</td>
                         <td width="30%">@item.Borrower</td>
                         <td width="30%">@item.Lender</td>
                     </tr>

@@ -1,8 +1,49 @@
-﻿@model IEnumerable<Mint.Models.Item>
+﻿@model Mint.Models.Item
 
-@{
-    ViewData["Title"] = "Create";
-}
+<form method="post" asp-action="Create">
+    <div class="border p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 pl-3">Add Item</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="ItemName"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Borrower"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Lender"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input asp-for="ItemName" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Borrower" class="form-control" />
+                    </div>
+                    <div class="col-4">
+                        <input asp-for="Lender" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                     <div class="col-8 text-center offset-2 row">
+                         <div class="col">
+                             <input class="btn btn-success w-75" type="submit" value="create" />
+                         </div>
+                         <div class="col">
+                             <a class="btn btn-danger w-75" asp-controller="Item" asp-action="Index">Back</a>
+                         </div>
+                    </div>
+                    <div class="col-8 text-center row">
 
-<h1>Create</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 
