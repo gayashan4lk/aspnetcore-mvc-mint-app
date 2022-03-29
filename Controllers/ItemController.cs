@@ -19,5 +19,10 @@ namespace Mint.Controllers
             IEnumerable<Item> ObjList = _db.Items;
             return View(ObjList);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
