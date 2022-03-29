@@ -19,6 +19,20 @@ namespace Mint.Controllers
             IEnumerable<Expense> expensesList = _db.Expenses;
             return View(expensesList);
         }
-       
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Expense expense)
+        {
+            _db.Expenses.Add(expense);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
