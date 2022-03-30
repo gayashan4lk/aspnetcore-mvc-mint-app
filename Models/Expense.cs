@@ -6,7 +6,10 @@ namespace Mint.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
+        [Range(0, double.MaxValue, ErrorMessage = "Amount should be greater than 0 !")]
         public double Amount { get; set; }
     }
 }

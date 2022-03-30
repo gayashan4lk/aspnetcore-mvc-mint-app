@@ -29,9 +29,13 @@ namespace Mint.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Expense expense)
         {
-            _db.Expenses.Add(expense);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                _db.Expenses.Add(expense);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(expense);
         }
 
     }
