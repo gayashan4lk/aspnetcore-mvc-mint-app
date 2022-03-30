@@ -1,41 +1,37 @@
 ﻿@model Mint.Models.Expense
 
-<form method="post" asp-action="DeletePost">
-    <input asp-for="Id" hidden />
-    <div class="border p-3">
-        <div class="form-group row">
-            <h2 class="text-black-50 pl-3">Delete Expense</h2>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label asp-for="Description"></label>
-                    </div>
-                    <div class="col-6">
-                        <label asp-for="Amount"></label>
-                    </div>
-                </div>
-                <div class="from-group row">
-                    <div class="col-6">
-                        <input class="form-control" disabled asp-for="Description" />
-                    </div>
-                    <div class="col-6">
-                        <input class="form-control" disabled asp-for="Amount" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-8 offset-2 row">
-                        <div class="col">
-                            <input class="btn btn-danger w-75" type="submit" value="Delete" />
-                        </div>
-                        <div class="col">
-                            <a asp-action="Index" class="btn btn-info w-75">Go Back</a>
-                        </div>
-                    </div>
-                </div>
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Delete</h1>
+
+<h4>Expense</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="DeletePost">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" disabled />
             </div>
-        </div>
+            <div class="form-group">
+                <label asp-for="ExpenseCategory" class="control-label"></label>
+                <input asp-for="ExpenseCategory" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        </form>
     </div>
-</form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
 
