@@ -41,7 +41,7 @@ namespace Mint.Controllers
             return View(expense);
         }
 
-        // POST Delete()
+        // POST Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
@@ -56,7 +56,7 @@ namespace Mint.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET Delete()
+        // GET Delete
         public IActionResult Delete(int? id)
         {
             if(id == null || id == 0)
@@ -69,6 +69,35 @@ namespace Mint.Controllers
                 return NotFound();
             }
             return View(obj);
+        }
+
+        // GET Update
+        public IActionResult Update(int? id)
+        {
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Expenses.Find(id);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+
+        // POST Update
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(Expense expense)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Expenses.Update(expense);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(expense);
         }
     }
 }

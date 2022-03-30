@@ -35,7 +35,7 @@
                         <td width="35%">@expense.Amount</td>
                         <td width="30%">
                             <div class="w-100 btn-group" role="group">
-                                <a class="btn btn-primary mx-1" asp-controller="Expense" asp-action="" asp-route-Id="@expense.Id">Update</a>
+                                <a class="btn btn-primary mx-1" asp-controller="Expense" asp-action="Update" asp-route-Id="@expense.Id">Update</a>
                                 <a class="btn btn-danger mx-1" asp-controller="Expense" asp-action="Delete" asp-route-Id="@expense.Id">Delete</a>
                             </div>
                         </td>
