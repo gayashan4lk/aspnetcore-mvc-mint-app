@@ -24,14 +24,21 @@
                 <tr>
                     <th scope="col">Description</th>
                     <th scope="col">Amount</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var expense in Model)
                 {
                     <tr>
-                        <td width="30%" scope="row">@expense.Description</td>
-                        <td width="30%">@expense.Amount</td>
+                        <td width="35%" scope="row">@expense.Description</td>
+                        <td width="35%">@expense.Amount</td>
+                        <td width="30%">
+                            <div class="w-100 btn-group" role="group">
+                                <a class="btn btn-primary mx-1" asp-controller="Expense" asp-action="" asp-route-Id="@expense.Id">Update</a>
+                                <a class="btn btn-danger mx-1" asp-controller="Expense" asp-action="Delete" asp-route-Id="@expense.Id">Delete</a>
+                            </div>
+                        </td>
                     </tr>
                 }
             </tbody>
