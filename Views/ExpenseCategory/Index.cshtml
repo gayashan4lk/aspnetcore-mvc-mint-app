@@ -23,14 +23,21 @@
                 <tr>
                     <th scope="col">Category Name</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var expenseCategory in Model)
                 {
                     <tr>
-                        <td width="50%" scope="row">@expenseCategory.Name</td>
-                        <td width="50%" scope="row">@expenseCategory.Description</td>
+                        <td width="35%" scope="row">@expenseCategory.Name</td>
+                        <td width="35%" scope="row">@expenseCategory.Description</td>
+                        <td width="30%" scope="row">
+                            <div class="w-100 btn-group" role="group">
+                                <a class="btn btn-primary mx-1" asp-controller="ExpenseCategory" asp-action="Update" asp-route-Id="@expenseCategory.Id">Update</a>
+                                <a class="btn btn-danger mx-1" asp-controller="ExpenseCategory" asp-action="Delete" asp-route-Id="@expenseCategory.Id">Delete</a>
+                            </div>
+                        </td>
                     </tr>
                 }
             </tbody>
