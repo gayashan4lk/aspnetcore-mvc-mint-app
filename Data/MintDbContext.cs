@@ -7,7 +7,6 @@ namespace Mint.Data
     {
         public MintDbContext(DbContextOptions<MintDbContext> options): base(options)
         {
-
         }
 
         public DbSet<Item> Items { get; set; }

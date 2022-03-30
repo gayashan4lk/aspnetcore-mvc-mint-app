@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mint.Models
 {
@@ -11,5 +12,8 @@ namespace Mint.Models
         [Required]
         [Range(0, double.MaxValue, ErrorMessage = "Amount should be greater than 0 !")]
         public double Amount { get; set; }
+        [Required]
+        [DisplayName("Expense category")]
+        public string ExpenseCategory { get; set; }
     }
 }
