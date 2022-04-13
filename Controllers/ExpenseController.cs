@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Mint.Data;
 using Mint.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mint.Controllers
 {
@@ -24,6 +26,12 @@ namespace Mint.Controllers
         // GET Create()
         public IActionResult Create()
         {
+            IEnumerable<SelectListItem> CategoryDropDown = _db.ExpenseCategories.Select(i => new SelectListItem
+            {
+                Text = i.Name,
+                Value = i.Id.ToString()
+            });
+            ViewBag.CategoryDropDown = CategoryDropDown;
             return View();
         }
 
